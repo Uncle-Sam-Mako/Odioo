@@ -20,10 +20,10 @@ def convert_audio_to_video(input_image, input_audio, output_video):
         [1:a]aformat=channel_layouts=mono,
         showwaves=s=1920x200:mode=line:rate=30:colors=white[wave];
 
-        [main][wave]overlay=0:H-220[textbg];
+        [main][wave]overlay=0:H-220[texgittbg];
 
         [textbg]drawtext=
-        text={video_title}:
+        text={}:
         fontcolor=white:
         fontsize=60:
         x=750:
@@ -38,7 +38,7 @@ def convert_audio_to_video(input_image, input_audio, output_video):
         -c:a aac \
         -shortest \
         {}
-        """.format(input_image, input_audio, output_video)
+        """.format(input_image, input_audio, video_title, output_video)
     ]
 
     try:
@@ -47,4 +47,11 @@ def convert_audio_to_video(input_image, input_audio, output_video):
     except subprocess.CalledProcessError as e:
         print(f"Error occurred: {e}")
 
+if __name__ == "__main__":
+    input_image = "./assets/input.png"  # Path to your input image
+    input_audio = "./assets/input.mp3"  # Path to your input audio
+    output_video = "./assets/output2.mp4"  # Desired output video path
 
+    convert_audio_to_video(input_image, input_audio, output_video)
+
+ 
