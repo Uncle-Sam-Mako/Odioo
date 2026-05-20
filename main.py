@@ -48,9 +48,9 @@ def convert_audio_to_video(input_image, input_audio, output_video):
         print(f"Error occurred: {e}")
 
 if __name__ == "__main__":
-    input_image = "./assets/input.png"  # Path to your input image
-    input_audio = "./assets/input.mp3"  # Path to your input audio
-    output_video = "./assets/output2.mp4"  # Desired output video path
+    input_image = "./assets/input.png"  # Path to input image
+    input_audio = "./assets/input.mp3"  # Path to input audio
+    output_video = "./assets/output2.mp4"  # output video path
 
     convert_audio_to_video(input_image, input_audio, output_video)
 
